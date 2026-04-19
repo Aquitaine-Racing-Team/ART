@@ -1,4 +1,24 @@
 [
+    {
+    "id": "saintonge-2026",
+    "title": "Sortie Saintonge",
+    "subtitle": "Circuit de Saintonge",
+    "date": "2025-05-25",
+    "dateDisplay": "25 Mai 2025",
+    "status": "upcoming",
+    "description": "Le 25 mai 2025, ART Aquitaine Racing Team vous invite à une journée exceptionnelle sur le circuit de Saintonge. Pour tous les passionnés de sport automobile, c'est l'opportunité idéale de repousser vos limites sur une piste de qualité.",
+    "fullDescription": "Le 25 mai 2025, ART Aquitaine Racing Team vous invite à vivre une journée palpitante sur le circuit de Saintonge ! Un moment unique pour tous les passionnés de sports automobiles. Que vous soyez amateur ou expert, venez découvrir des sensations fortes, assister à des démonstrations exceptionnelles, et échanger avec les membres de notre équipe.\n\nCette sortie sur circuit se déroulera sur 3 à 4 plateaux, avec des sessions de 20 minutes par plateau, permettant à chaque pilote de vivre pleinement l'expérience de la piste. Que vous soyez un pilote chevronné ou un amateur enthousiaste, chaque participant pourra évoluer à son rythme, dans des conditions optimales.",
+    "details": [
+      "Coût de participation : 190€ par jour",
+      "3 à 4 plateaux de roulage avec des sessions bien espacées",
+      "Sessions de 20 minutes sur circuit",
+      "Encadrement par ART Aquitaine Racing Team"
+    ],
+    "thumbnail": "pictures/saintonge-2026/cover.jpg",
+    "folder": "saintonge-2026",
+    "googleForm": "https://aquitaineracingteam.fr/contact.html",
+    "hasPhotos": false
+  },
   {
     "id": "saintonge-2025",
     "title": "Sortie Saintonge",
@@ -16,7 +36,6 @@
     ],
     "thumbnail": "pictures/saintonge-2025/cover.jpg",
     "folder": "saintonge-2025",
-    "googleForm": "https://forms.gle/JjhRyi3FK4dPZKvx5",
     "hasPhotos": true
   },
   {
