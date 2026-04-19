@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Photos — ART Aquitaine Racing Team</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="nav" x-data="{ open: false }">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../pictures/site/logo.jpg" alt="ART Logo" class="nav__logo-img" onerror="this.style.display='none'">
+        <div class="nav__logo-text">ART<span>Aquitaine Racing Team</span></div>
+      </a>
+      <div class="nav__links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="../evenements.html" class="nav__link">Évènements</a>
+        <a href="../galerie.html" class="nav__link active">Galerie</a>
+        <a href="../a-propos.html" class="nav__link">À propos</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+      </div>
+      <a href="../rejoindre.html" class="nav__cta">Nous rejoindre</a>
+      <button class="nav__burger" @click="open = !open" aria-label="Menu">
+        <span :style="open ? 'transform:rotate(45deg) translate(5px,5px)' : ''"></span>
+        <span :style="open ? 'opacity:0' : ''"></span>
+        <span :style="open ? 'transform:rotate(-45deg) translate(5px,-5px)' : ''"></span>
+      </button>
+    </div>
+    <div class="nav__mobile" :class="{ open: open }">
+      <a href="../index.html" class="nav__mobile-link" @click="open=false">Accueil</a>
+      <a href="../evenements.html" class="nav__mobile-link" @click="open=false">Évènements</a>
+      <a href="../galerie.html" class="nav__mobile-link" @click="open=false">Galerie</a>
+      <a href="../a-propos.html" class="nav__mobile-link" @click="open=false">À propos</a>
+      <a href="../contact.html" class="nav__mobile-link" @click="open=false">Contact</a>
+      <a href="../rejoindre.html" class="nav__mobile-cta" @click="open=false">Nous rejoindre</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header" id="photos-header">
+    <div class="page-header__inner">
+      <div class="page-header__label">
+        <a href="../galerie.html" style="color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">← Galerie</a>
+      </div>
+      <h1 class="page-header__title" id="photos-title">Photos</h1>
+      <p class="page-header__subtitle" id="photos-subtitle"></p>
+    </div>
+  </div>
+
+  <!-- ── PHOTO GRID ── -->
+  <section class="section">
+    <div class="section__inner">
+      <div id="photos-info" style="margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+        <div id="photos-count" style="font-family:var(--font-display);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400)"></div>
+        <a id="event-link" href="#" class="btn btn-outline-dark" style="font-size:.8rem;padding:10px 20px">
+          Voir l'évènement →
+        </a>
+      </div>
+
+      <!-- Photo grid — populated by JS from photos.json in the event folder -->
+      <div class="gallery-grid" id="photo-grid">
+        <div style="color:var(--gray-400);font-size:.9rem;grid-column:1/-1;padding:48px 0;text-align:center">
+          <p>Chargement des photos…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" aria-label="Fermer">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__prev" aria-label="Précédent">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img class="lightbox__img" src="" alt="">
+    <button class="lightbox__nav lightbox__next" aria-label="Suivant">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox__counter"></div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <div class="footer__logo-text">ART</div>
+          <div class="footer__logo-sub">Aquitaine Racing Team</div>
+          <p class="footer__desc">Club de passionnés d'automobile basé en Aquitaine.</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <a href="../index.html" class="footer__col-link">Accueil</a>
+          <a href="../evenements.html" class="footer__col-link">Évènements</a>
+          <a href="../galerie.html" class="footer__col-link">Galerie Photos</a>
+          <a href="../a-propos.html" class="footer__col-link">À propos</a>
+          <a href="../rejoindre.html" class="footer__col-link">Nous Rejoindre</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <a href="../contact.html" class="footer__col-link">Formulaire contact</a>
+          <p class="footer__col-link" style="cursor:default">Laurent: +33 6 07 10 24 70</p>
+          <p class="footer__col-link" style="cursor:default">Hervé: +33 6 70 35 13 93</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Aquitaine Racing Team.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Get event id from filename: photos-{id}.html
+    const filename = window.location.pathname.split('/').pop();
+    const eventId = filename.replace('photos-', '').replace('.html', '');
+
+    loadEvents().then(async events => {
+      const ev = events.find(e => e.id === eventId);
+      if (!ev) {
+        document.getElementById('photos-title').textContent = 'Album introuvable';
+        return;
+      }
+
+      document.title = 'Photos ' + ev.title + ' — ART';
+      document.getElementById('photos-title').textContent = ev.title;
+      document.getElementById('photos-subtitle').textContent = ev.dateDisplay + ' · ' + ev.subtitle;
+      document.getElementById('event-link').href = 'event-' + ev.id + '.html';
+
+      // Load photos list from the event's photos.json
+      // photos.json = array of filenames like ["photo1.jpg", "photo2.jpg", ...]
+      const grid = document.getElementById('photo-grid');
+      let photos = [];
+
+      try {
+        const res = await fetch('../pictures/' + ev.folder + '/photos.json');
+        photos = await res.json();
+      } catch {
+        // Fallback: try numbered files (photo-1.jpg up to 50, stop on error)
+        grid.innerHTML = `
+          <div style="grid-column:1/-1;text-align:center;padding:48px 0;color:var(--gray-400)">
+            <p style="margin-bottom:12px;font-size:1rem">Aucune liste de photos trouvée.</p>
+            <p style="font-size:.875rem">Ajoutez un fichier <code>photos.json</code> dans <code>pictures/${ev.folder}/</code></p>
+            <p style="font-size:.8rem;margin-top:8px;color:var(--gray-400)">Exemple : <code>["cover.jpg", "photo-1.jpg", "photo-2.jpg"]</code></p>
+          </div>`;
+        document.getElementById('photos-count').textContent = '0 photo';
+        return;
+      }
+
+      document.getElementById('photos-count').textContent = photos.length + ' photo' + (photos.length > 1 ? 's' : '');
+
+      grid.innerHTML = photos.map((filename, i) => `
+        <div class="gallery-item">
+          <img src="../pictures/${ev.folder}/${filename}"
+               alt="${ev.title} — photo ${i+1}"
+               loading="lazy"
+               onerror="this.parentElement.style.display='none'">
+          <div class="gallery-item__overlay">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/>
+            </svg>
+          </div>
+        </div>`).join('');
+
+      initLightbox();
+    });
+  </script>
+</body>
+</html>

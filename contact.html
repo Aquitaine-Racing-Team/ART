@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — ART Aquitaine Racing Team</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="nav" x-data="{ open: false }">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="pictures/site/logo.jpg" alt="ART Logo" class="nav__logo-img" onerror="this.style.display='none'">
+        <div class="nav__logo-text">ART<span>Aquitaine Racing Team</span></div>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Accueil</a>
+        <a href="evenements.html" class="nav__link">Évènements</a>
+        <a href="galerie.html" class="nav__link">Galerie</a>
+        <a href="a-propos.html" class="nav__link">À propos</a>
+        <a href="contact.html" class="nav__link active">Contact</a>
+      </div>
+      <a href="rejoindre.html" class="nav__cta">Nous rejoindre</a>
+      <button class="nav__burger" @click="open = !open" aria-label="Menu">
+        <span :style="open ? 'transform:rotate(45deg) translate(5px,5px)' : ''"></span>
+        <span :style="open ? 'opacity:0' : ''"></span>
+        <span :style="open ? 'transform:rotate(-45deg) translate(5px,-5px)' : ''"></span>
+      </button>
+    </div>
+    <div class="nav__mobile" :class="{ open: open }">
+      <a href="index.html" class="nav__mobile-link" @click="open=false">Accueil</a>
+      <a href="evenements.html" class="nav__mobile-link" @click="open=false">Évènements</a>
+      <a href="galerie.html" class="nav__mobile-link" @click="open=false">Galerie</a>
+      <a href="a-propos.html" class="nav__mobile-link" @click="open=false">À propos</a>
+      <a href="contact.html" class="nav__mobile-link" @click="open=false">Contact</a>
+      <a href="rejoindre.html" class="nav__mobile-cta" @click="open=false">Nous rejoindre</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header">
+    <div class="page-header__inner">
+      <div class="page-header__label">Nous écrire</div>
+      <h1 class="page-header__title">Contact</h1>
+      <p class="page-header__subtitle">Une question, une idée, envie de nous rejoindre ? On est là.</p>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <section class="section">
+    <div class="section__inner">
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div>
+          <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.8rem;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px">Parlons-en</h2>
+          <p style="font-size:1rem;color:var(--gray-600);margin-bottom:36px;font-weight:300;line-height:1.7">N'hésitez pas à nous contacter pour toute question sur le club, les sorties, ou pour rejoindre l'aventure.</p>
+
+          <div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Téléphone</div>
+                <div class="contact-info__value">
+                  <a href="tel:+33607102470" style="color:var(--gray-900);transition:color .2s" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--gray-900)'">Laurent: +33 6 07 10 24 70</a>
+                </div>
+                <div class="contact-info__value" style="margin-top:4px">
+                  <a href="tel:+33670351393" style="color:var(--gray-900);transition:color .2s" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--gray-900)'">Hervé: +33 6 70 35 13 93</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Région</div>
+                <div class="contact-info__value">Aquitaine, France</div>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Facebook</div>
+                <div class="contact-info__value">
+                  <a href="https://www.facebook.com/groups/492810960490464" target="_blank" rel="noopener"
+                     style="color:var(--gray-900);transition:color .2s" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--gray-900)'">
+                    Groupe ART Aquitaine Racing Team
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info__item" style="border-bottom:none">
+              <div class="contact-info__icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Instagram</div>
+                <div class="contact-info__value">
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener"
+                     style="color:var(--gray-900);transition:color .2s" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--gray-900)'">
+                    @aquitaineracingteam
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-box">
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Envoyez-nous un message</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);margin-bottom:28px">
+          </p>
+          <form id="contact-form">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="sujet">Sujet</label>
+              <select id="sujet" name="sujet">
+                <option value="">Choisissez un sujet</option>
+                <option value="adhesion">Adhésion au club</option>
+                <option value="evenement">Question sur un évènement</option>
+                <option value="info">Renseignement général</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Votre message…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              Envoyer le message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <div class="footer__logo-text">ART</div>
+          <div class="footer__logo-sub">Aquitaine Racing Team</div>
+          <p class="footer__desc">Club de passionnés d'automobile basé en Aquitaine.</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <a href="index.html" class="footer__col-link">Accueil</a>
+          <a href="evenements.html" class="footer__col-link">Évènements</a>
+          <a href="galerie.html" class="footer__col-link">Galerie Photos</a>
+          <a href="a-propos.html" class="footer__col-link">À propos</a>
+          <a href="rejoindre.html" class="footer__col-link">Nous Rejoindre</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <a href="contact.html" class="footer__col-link">Formulaire contact</a>
+          <p class="footer__col-link" style="cursor:default">Laurent: +33 6 07 10 24 70</p>
+          <p class="footer__col-link" style="cursor:default">Hervé: +33 6 70 35 13 93</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Aquitaine Racing Team.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="success-toast"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

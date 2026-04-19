@@ -1,0 +1,52 @@
+[
+  {
+    "id": "saintonge-2025",
+    "title": "Sortie Saintonge",
+    "subtitle": "Circuit de Saintonge",
+    "date": "2025-05-09",
+    "dateDisplay": "9 Mai 2025",
+    "status": "past",
+    "description": "Le 9 mai 2025, ART Aquitaine Racing Team vous invite à une journée exceptionnelle sur le circuit de Saintonge. Pour tous les passionnés de sport automobile, c'est l'opportunité idéale de repousser vos limites sur une piste de qualité.",
+    "fullDescription": "Le 9 mai 2025, ART Aquitaine Racing Team vous invite à vivre une journée palpitante sur le circuit de Saintonge ! Un moment unique pour tous les passionnés de sports automobiles. Que vous soyez amateur ou expert, venez découvrir des sensations fortes, assister à des démonstrations exceptionnelles, et échanger avec les membres de notre équipe.\n\nCette sortie sur circuit se déroulera sur 3 à 4 plateaux, avec des sessions de 20 minutes par plateau, permettant à chaque pilote de vivre pleinement l'expérience de la piste. Que vous soyez un pilote chevronné ou un amateur enthousiaste, chaque participant pourra évoluer à son rythme, dans des conditions optimales.",
+    "details": [
+      "Coût de participation : 190€ par jour",
+      "3 à 4 plateaux de roulage avec des sessions bien espacées",
+      "Sessions de 20 minutes sur circuit",
+      "Encadrement par ART Aquitaine Racing Team"
+    ],
+    "thumbnail": "pictures/saintonge-2025/cover.jpg",
+    "folder": "saintonge-2025",
+    "googleForm": "https://forms.gle/JjhRyi3FK4dPZKvx5",
+    "hasPhotos": true
+  },
+  {
+    "id": "nogaro-2024",
+    "title": "Sortie Nogaro",
+    "subtitle": "Circuit de Nogaro",
+    "date": "2024-10-05",
+    "dateDisplay": "5–6 Octobre 2024",
+    "status": "past",
+    "description": "Les 5 et 6 Octobre dernier, nous avons eu la chance de rouler sur le prestigieux circuit de Nogaro. Un grand merci à tous les participants pour leur énergie, leur passion et leur bonne humeur !",
+    "fullDescription": "Les 5 et 6 Octobre dernier, nous avons eu la chance de rouler sur le prestigieux circuit de Nogaro. Un grand merci à tous les participants pour leur énergie, leur passion et leur bonne humeur ! Que ce soit sur la piste ou en dehors, l'ambiance était parfaite, et les performances étaient au rendez-vous. À ceux qui étaient présents, merci pour votre enthousiasme, et pour ceux qui n'ont pas pu nous rejoindre, restez à l'affût, de nouvelles aventures arrivent bientôt !",
+    "details": [],
+    "thumbnail": "pictures/nogaro-2024/cover.jpg",
+    "folder": "nogaro-2024",
+    "googleForm": "",
+    "hasPhotos": true
+  },
+  {
+    "id": "mas-du-clos-2024",
+    "title": "Sortie Mas du Clos",
+    "subtitle": "Circuit du Mas du Clos",
+    "date": "2024-05-08",
+    "dateDisplay": "8–9 Mai 2024",
+    "status": "past",
+    "description": "Les 8 et 9 mai derniers, nous avons eu le privilège de vivre un week-end exceptionnel sur le circuit du Mas du Clos, organisé par Deus Ex Machina. Deux jours de roulage intensif, de rencontres passionnées.",
+    "fullDescription": "Les 8 et 9 mai derniers, nous avons eu le privilège de vivre un week-end exceptionnel sur le circuit du Mas du Clos, organisé par Deus Ex Machina. Deux jours de roulage intensif, de rencontres passionnées et de moments forts partagés entre pilotes. Que ce soit sur la piste ou en dehors, l'ambiance était incroyable, et les sensations au rendez-vous !",
+    "details": [],
+    "thumbnail": "pictures/mas-du-clos-2024/cover.jpg",
+    "folder": "mas-du-clos-2024",
+    "googleForm": "",
+    "hasPhotos": true
+  }
+]

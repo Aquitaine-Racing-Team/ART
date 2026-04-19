@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Évènement — ART Aquitaine Racing Team</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="nav" x-data="{ open: false }">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../pictures/site/logo.jpg" alt="ART Logo" class="nav__logo-img" onerror="this.style.display='none'">
+        <div class="nav__logo-text">ART<span>Aquitaine Racing Team</span></div>
+      </a>
+      <div class="nav__links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="../evenements.html" class="nav__link active">Évènements</a>
+        <a href="../galerie.html" class="nav__link">Galerie</a>
+        <a href="../a-propos.html" class="nav__link">À propos</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+      </div>
+      <a href="../rejoindre.html" class="nav__cta">Nous rejoindre</a>
+      <button class="nav__burger" @click="open = !open" aria-label="Menu">
+        <span :style="open ? 'transform:rotate(45deg) translate(5px,5px)' : ''"></span>
+        <span :style="open ? 'opacity:0' : ''"></span>
+        <span :style="open ? 'transform:rotate(-45deg) translate(5px,-5px)' : ''"></span>
+      </button>
+    </div>
+    <div class="nav__mobile" :class="{ open: open }">
+      <a href="../index.html" class="nav__mobile-link" @click="open=false">Accueil</a>
+      <a href="../evenements.html" class="nav__mobile-link" @click="open=false">Évènements</a>
+      <a href="../galerie.html" class="nav__mobile-link" @click="open=false">Galerie</a>
+      <a href="../a-propos.html" class="nav__mobile-link" @click="open=false">À propos</a>
+      <a href="../contact.html" class="nav__mobile-link" @click="open=false">Contact</a>
+      <a href="../rejoindre.html" class="nav__mobile-cta" @click="open=false">Nous rejoindre</a>
+    </div>
+  </nav>
+
+  <!-- ── EVENT HERO ── -->
+  <div class="event-detail__hero" id="event-hero">
+    <img id="event-hero-img" src="" alt="">
+    <div class="event-detail__hero-content">
+      <div class="event-detail__meta" id="event-meta"></div>
+      <h1 class="event-detail__title" id="event-title"></h1>
+    </div>
+  </div>
+
+  <!-- ── EVENT BODY ── -->
+  <div class="event-detail__body" id="event-body">
+    <div class="event-detail__content" id="event-content">
+      <!-- injected by JS -->
+    </div>
+    <div>
+      <div class="event-detail__details" id="event-details">
+        <!-- injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OTHER EVENTS ── -->
+  <section class="section section--gray">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__label">À découvrir</span>
+        <h2 class="section__title">Autres Évènements</h2>
+      </div>
+      <div class="events-grid" id="other-events"></div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <div class="footer__logo-text">ART</div>
+          <div class="footer__logo-sub">Aquitaine Racing Team</div>
+          <p class="footer__desc">Club de passionnés d'automobile basé en Aquitaine.</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <a href="../index.html" class="footer__col-link">Accueil</a>
+          <a href="../evenements.html" class="footer__col-link">Évènements</a>
+          <a href="../galerie.html" class="footer__col-link">Galerie Photos</a>
+          <a href="../a-propos.html" class="footer__col-link">À propos</a>
+          <a href="../rejoindre.html" class="footer__col-link">Nous Rejoindre</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <a href="../contact.html" class="footer__col-link">Formulaire contact</a>
+          <p class="footer__col-link" style="cursor:default">Laurent: +33 6 07 10 24 70</p>
+          <p class="footer__col-link" style="cursor:default">Hervé: +33 6 70 35 13 93</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Aquitaine Racing Team.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Get event id from filename: event-{id}.html
+    const filename = window.location.pathname.split('/').pop();
+    const eventId = filename.replace('event-', '').replace('.html', '');
+
+    loadEvents().then(events => {
+      const ev = events.find(e => e.id === eventId);
+      if (!ev) {
+        document.getElementById('event-title').textContent = 'Évènement introuvable';
+        return;
+      }
+
+      // Meta
+      document.title = ev.title + ' — ART';
+      document.getElementById('event-meta').textContent = ev.dateDisplay + ' · ' + ev.subtitle;
+      document.getElementById('event-title').textContent = ev.title;
+
+      // Hero image
+      const heroImg = document.getElementById('event-hero-img');
+      heroImg.src = '../' + ev.thumbnail;
+      heroImg.alt = ev.title;
+      heroImg.onerror = () => {
+        document.getElementById('event-hero').style.background = 'var(--gray-900)';
+        heroImg.style.display = 'none';
+      };
+
+      // Status badge in hero
+      if (ev.status === 'upcoming') {
+        const badge = document.createElement('span');
+        badge.className = 'event-card__badge badge--upcoming';
+        badge.style.cssText = 'position:absolute;top:24px;left:calc(var(--nav-height) + 8px);top:calc(var(--nav-height) + 16px)';
+        badge.textContent = '🏁 À venir';
+        document.querySelector('.event-detail__hero-content').prepend(badge);
+      }
+
+      // Content
+      const paragraphs = ev.fullDescription.split('\n\n').filter(Boolean);
+      document.getElementById('event-content').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+
+      // Details sidebar
+      const detailsEl = document.getElementById('event-details');
+      let detailsHTML = `<h3>Détails de l'évènement</h3>`;
+      detailsHTML += `
+        <div class="event-detail__detail-item"><span><strong>Date :</strong> ${ev.dateDisplay}</span></div>
+        <div class="event-detail__detail-item"><span><strong>Circuit :</strong> ${ev.subtitle}</span></div>
+      `;
+      if (ev.details && ev.details.length) {
+        ev.details.forEach(d => {
+          detailsHTML += `<div class="event-detail__detail-item"><span>${d}</span></div>`;
+        });
+      }
+
+      // CTA button
+      if (ev.status === 'upcoming' && ev.googleForm) {
+        detailsHTML += `<a href="${ev.googleForm}" target="_blank" rel="noopener" class="event-detail__cta">S'inscrire à cet évènement →</a>`;
+      } else if (ev.hasPhotos) {
+        detailsHTML += `<a href="photos-${ev.id}.html" class="event-detail__cta" style="background:var(--gray-900)">Voir les photos →</a>`;
+      } else {
+        detailsHTML += `<span class="event-detail__cta disabled">Inscriptions fermées</span>`;
+      }
+
+      detailsEl.innerHTML = detailsHTML;
+
+      // Other events
+      const others = events.filter(e => e.id !== eventId).slice(0, 3);
+      document.getElementById('other-events').innerHTML = others.map(e => renderEventCard(e, '../')).join('');
+    });
+  </script>
+</body>
+</html>

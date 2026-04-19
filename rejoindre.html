@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nous Rejoindre — ART Aquitaine Racing Team</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="nav" x-data="{ open: false }">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="pictures/site/logo.jpg" alt="ART Logo" class="nav__logo-img" onerror="this.style.display='none'">
+        <div class="nav__logo-text">ART<span>Aquitaine Racing Team</span></div>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Accueil</a>
+        <a href="evenements.html" class="nav__link">Évènements</a>
+        <a href="galerie.html" class="nav__link">Galerie</a>
+        <a href="a-propos.html" class="nav__link">À propos</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <a href="rejoindre.html" class="nav__cta" style="background:var(--red-dark)">Nous rejoindre</a>
+      <button class="nav__burger" @click="open = !open" aria-label="Menu">
+        <span :style="open ? 'transform:rotate(45deg) translate(5px,5px)' : ''"></span>
+        <span :style="open ? 'opacity:0' : ''"></span>
+        <span :style="open ? 'transform:rotate(-45deg) translate(5px,-5px)' : ''"></span>
+      </button>
+    </div>
+    <div class="nav__mobile" :class="{ open: open }">
+      <a href="index.html" class="nav__mobile-link" @click="open=false">Accueil</a>
+      <a href="evenements.html" class="nav__mobile-link" @click="open=false">Évènements</a>
+      <a href="galerie.html" class="nav__mobile-link" @click="open=false">Galerie</a>
+      <a href="a-propos.html" class="nav__mobile-link" @click="open=false">À propos</a>
+      <a href="contact.html" class="nav__mobile-link" @click="open=false">Contact</a>
+      <a href="rejoindre.html" class="nav__mobile-cta" @click="open=false">Nous rejoindre</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header">
+    <div class="page-header__inner">
+      <div class="page-header__label">Adhésion</div>
+      <h1 class="page-header__title">Nous Rejoindre</h1>
+      <p class="page-header__subtitle">Intégrez une communauté de passionnés, c'est simple et convivial.</p>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="section">
+    <div class="section__inner">
+      <div class="section__header" style="text-align:center;max-width:600px;margin-inline:auto">
+        <span class="section__label">Comment ça marche</span>
+        <h2 class="section__title">Rejoindre ART en 3 étapes</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:80px;position:relative">
+        <!-- connector line -->
+        <div style="position:absolute;top:40px;left:calc(16% + 32px);right:calc(16% + 32px);height:2px;background:var(--gray-200);z-index:0"></div>
+        <div style="text-align:center;position:relative;z-index:1">
+          <div style="width:80px;height:80px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 4px 20px rgba(220,38,38,.3)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:1.8rem;color:var(--white)">1</span>
+          </div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">Remplir le formulaire</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);line-height:1.7">Complétez le formulaire d'adhésion ci-dessous avec vos informations.</p>
+        </div>
+        <div style="text-align:center;position:relative;z-index:1">
+          <div style="width:80px;height:80px;border-radius:50%;background:var(--white);border:3px solid var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 24px">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:1.8rem;color:var(--red)">2</span>
+          </div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">On vous contacte</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);line-height:1.7">Un membre de l'équipe vous recontacte pour valider votre adhésion.</p>
+        </div>
+        <div style="text-align:center;position:relative;z-index:1">
+          <div style="width:80px;height:80px;border-radius:50%;background:var(--white);border:3px solid var(--gray-200);display:flex;align-items:center;justify-content:center;margin:0 auto 24px">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:1.8rem;color:var(--gray-400)">3</span>
+          </div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">Bienvenue sur la piste!</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);line-height:1.7">Vous rejoignez le club et participez aux prochaines sorties.</p>
+        </div>
+      </div>
+
+      <!-- Membership form section -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:start">
+        <!-- Info side -->
+        <div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.5rem;text-transform:uppercase;letter-spacing:.02em;margin-bottom:24px">Ce que vous obtenez</h3>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="16" height="16" fill="none" stroke="var(--red)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <p style="font-weight:600;color:var(--gray-900);margin-bottom:2px">Accès aux sorties circuit</p>
+                <p style="font-size:.875rem;color:var(--gray-600)">3 à 4 sorties par an sur des circuits emblématiques.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="16" height="16" fill="none" stroke="var(--red)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <p style="font-weight:600;color:var(--gray-900);margin-bottom:2px">Encadrement professionnel</p>
+                <p style="font-size:.875rem;color:var(--gray-600)">Conseils de pilotage pour progresser en toute sécurité.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="16" height="16" fill="none" stroke="var(--red)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <p style="font-weight:600;color:var(--gray-900);margin-bottom:2px">Entraide mécanique</p>
+                <p style="font-size:.875rem;color:var(--gray-600)">Réseau de passionnés prêts à s'entraider.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:36px;height:36px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="16" height="16" fill="none" stroke="var(--red)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <p style="font-weight:600;color:var(--gray-900);margin-bottom:2px">Ambiance conviviale</p>
+                <p style="font-size:.875rem;color:var(--gray-600)">Des moments partagés entre passionnés, sans prise de tête.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:40px;background:var(--gray-100);border-radius:var(--radius-lg);padding:24px;border-left:4px solid var(--red)">
+            <p style="font-family:var(--font-display);font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:8px">Tarif participation</p>
+            <p style="font-size:2rem;font-family:var(--font-display);font-weight:800;color:var(--gray-900)">50€ <span style="font-size:1rem;font-weight:400;color:var(--gray-600)">/ ans</span></p>
+          </div>
+        </div>
+
+        <!-- Form side -->
+        <div>
+          <div style="background:var(--gray-900);border-radius:var(--radius-lg);padding:40px">
+            <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--white);margin-bottom:8px">Formulaire d'adhésion</h3>
+            <p style="font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:28px">Remplissez le formulaire et nous vous contacterons rapidement.</p>
+
+            <!-- REPLACE this href with your actual Google Form link -->
+            <a href="https://forms.google.com/VOTRE_FORMULAIRE_ADHESION"
+               target="_blank" rel="noopener"
+               class="btn btn-primary"
+               style="width:100%;justify-content:center;margin-bottom:20px;font-size:1rem;padding:16px 24px">
+              Ouvrir le formulaire d'adhésion
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+
+            <p style="font-size:.8rem;color:rgba(255,255,255,.3);text-align:center;line-height:1.6">
+              Le formulaire s'ouvre dans un nouvel onglet.<br>
+            </p>
+
+            <div style="margin-top:28px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px">
+              <p style="font-family:var(--font-display);font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px">Ou contactez-nous directement</p>
+              <p style="font-size:.9rem;color:rgba(255,255,255,.6)">Laurent: <a href="tel:+33607102470" style="color:var(--white);font-weight:500">+33 6 07 10 24 70</a></p>
+              <p style="font-size:.9rem;color:rgba(255,255,255,.6);margin-top:6px">Hervé: <a href="tel:+33670351393" style="color:var(--white);font-weight:500">+33 6 70 35 13 93</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <div class="footer__logo-text">ART</div>
+          <div class="footer__logo-sub">Aquitaine Racing Team</div>
+          <p class="footer__desc">Club de passionnés d'automobile basé en Aquitaine.</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <a href="index.html" class="footer__col-link">Accueil</a>
+          <a href="evenements.html" class="footer__col-link">Évènements</a>
+          <a href="galerie.html" class="footer__col-link">Galerie Photos</a>
+          <a href="a-propos.html" class="footer__col-link">À propos</a>
+          <a href="rejoindre.html" class="footer__col-link">Nous Rejoindre</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <a href="contact.html" class="footer__col-link">Formulaire contact</a>
+          <p class="footer__col-link" style="cursor:default">Laurent: +33 6 07 10 24 70</p>
+          <p class="footer__col-link" style="cursor:default">Hervé: +33 6 70 35 13 93</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Aquitaine Racing Team.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

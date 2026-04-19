@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — ART Aquitaine Racing Team</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="nav" x-data="{ open: false }">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="pictures/site/logo.jpg" alt="ART Logo" class="nav__logo-img" onerror="this.style.display='none'">
+        <div class="nav__logo-text">ART<span>Aquitaine Racing Team</span></div>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Accueil</a>
+        <a href="evenements.html" class="nav__link">Évènements</a>
+        <a href="galerie.html" class="nav__link">Galerie</a>
+        <a href="a-propos.html" class="nav__link active">À propos</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <a href="rejoindre.html" class="nav__cta">Nous rejoindre</a>
+      <button class="nav__burger" @click="open = !open" aria-label="Menu">
+        <span :style="open ? 'transform:rotate(45deg) translate(5px,5px)' : ''"></span>
+        <span :style="open ? 'opacity:0' : ''"></span>
+        <span :style="open ? 'transform:rotate(-45deg) translate(5px,-5px)' : ''"></span>
+      </button>
+    </div>
+    <div class="nav__mobile" :class="{ open: open }">
+      <a href="index.html" class="nav__mobile-link" @click="open=false">Accueil</a>
+      <a href="evenements.html" class="nav__mobile-link" @click="open=false">Évènements</a>
+      <a href="galerie.html" class="nav__mobile-link" @click="open=false">Galerie</a>
+      <a href="a-propos.html" class="nav__mobile-link" @click="open=false">À propos</a>
+      <a href="contact.html" class="nav__mobile-link" @click="open=false">Contact</a>
+      <a href="rejoindre.html" class="nav__mobile-cta" @click="open=false">Nous rejoindre</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header" style="background-image:none">
+    <div class="page-header__inner">
+      <div class="page-header__label">Notre histoire</div>
+      <h1 class="page-header__title">À propos du Club</h1>
+      <p class="page-header__subtitle">Plus qu'un club, une famille de passionnés.</p>
+    </div>
+  </div>
+
+  <!-- ── STATS ── -->
+  <section class="section section--gray" style="padding-top:64px;padding-bottom:64px">
+    <div class="section__inner">
+      <div class="stats-row" style="margin-bottom:0">
+        <div class="stat">
+          <div class="stat__number">3–4</div>
+          <div class="stat__label">Sorties / an</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">190€</div>
+          <div class="stat__label">/ sortie circuit</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">20'</div>
+          <div class="stat__label">Sessions piste</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">100%</div>
+          <div class="stat__label">Passion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT CONTENT ── -->
+  <section class="section">
+    <div class="section__inner">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:64px;align-items:start">
+        <div>
+          <span class="section__label">Qui sommes-nous</span>
+          <h2 class="section__title" style="margin-bottom:32px">L'Aquitaine<br>Racing Team</h2>
+
+          <p style="font-size:1rem;line-height:1.85;color:var(--gray-600);margin-bottom:20px;font-weight:300">
+            <strong style="color:var(--gray-900);font-weight:600">L'Aquitaine Racing Team (ART)</strong> est bien plus qu'un simple club automobile : c'est une communauté de passionnés qui aiment partager leur enthousiasme pour la conduite sportive et l'univers de la mécanique.
+          </p>
+          <p style="font-size:1rem;line-height:1.85;color:var(--gray-600);margin-bottom:20px;font-weight:300">
+            Ici, pas de rivalité, juste l'envie de vivre ensemble des moments intenses sur circuit et d'échanger autour d'une passion commune.
+          </p>
+          <p style="font-size:1rem;line-height:1.85;color:var(--gray-600);margin-bottom:20px;font-weight:300">
+            Chaque année, nous organisons <strong style="color:var(--gray-900)">3 à 4 sorties</strong> sur des circuits emblématiques comme Nogaro, le Circuit de Saintonge et bien d'autres. Que ce soit pour perfectionner son pilotage, découvrir de nouvelles sensations ou simplement passer une journée entre passionnés, chaque sortie est une occasion unique.
+          </p>
+          <p style="font-size:1rem;line-height:1.85;color:var(--gray-600);font-weight:300">
+            Mais ART, c'est aussi un club où <strong style="color:var(--gray-900)">l'entraide est une valeur clé.</strong> Besoin d'un coup de main en mécanique ? D'un conseil sur la préparation de votre voiture ou le choix de vos pneus ? Vous trouverez toujours quelqu'un prêt à vous aider.
+          </p>
+        </div>
+        <div>
+          <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:var(--gray-200)">
+            <img src="pictures/site/about.jpg" alt="ART en action"
+              style="width:100%;height:100%;object-fit:cover"
+              onerror="this.parentElement.style.background='var(--gray-200)'">
+          </div>
+          <div style="margin-top:24px;background:var(--red);color:var(--white);padding:28px 32px;border-radius:var(--radius-lg)">
+            <p style="font-family:var(--font-display);font-weight:800;font-size:1.4rem;text-transform:uppercase;letter-spacing:.02em;line-height:1.2">
+              "Vivre l'automobile dans une ambiance authentique et conviviale."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUES ── -->
+  <section class="section section--gray">
+    <div class="section__inner">
+      <div class="section__header" style="text-align:center;max-width:600px;margin-inline:auto;margin-bottom:56px">
+        <span class="section__label">Nos valeurs</span>
+        <h2 class="section__title">Ce qui nous définit</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px">
+        <div style="background:var(--white);padding:36px 28px;border-radius:var(--radius-lg);border:1px solid var(--gray-200);text-align:center">
+          <div style="width:56px;height:56px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--red)">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">Passion</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);line-height:1.7">L'amour de l'automobile et de la vitesse, partagé sans modération.</p>
+        </div>
+        <div style="background:var(--white);padding:36px 28px;border-radius:var(--radius-lg);border:1px solid var(--gray-200);text-align:center">
+          <div style="width:56px;height:56px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--red)">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">Convivialité</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);line-height:1.7">Une ambiance amicale et détendue, sur la piste comme en dehors.</p>
+        </div>
+        <div style="background:var(--white);padding:36px 28px;border-radius:var(--radius-lg);border:1px solid var(--gray-200);text-align:center">
+          <div style="width:56px;height:56px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--red)">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">Entraide</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);line-height:1.7">Conseils mécaniques, préparation circuit — on s'aide entre pilotes.</p>
+        </div>
+        <div style="background:var(--white);padding:36px 28px;border-radius:var(--radius-lg);border:1px solid var(--gray-200);text-align:center">
+          <div style="width:56px;height:56px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--red)">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">Accessibilité</h3>
+          <p style="font-size:.875rem;color:var(--gray-600);line-height:1.7">Ouvert à tous les niveaux, du novice à l'habitué des circuits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="join-section">
+    <div class="section__inner" style="text-align:center;position:relative">
+      <span class="section__label" style="color:var(--red)">Vous convaincre</span>
+      <h2 class="section__title" style="color:var(--white);margin-top:8px">Rejoignez l'aventure</h2>
+      <p style="margin-top:16px;color:rgba(255,255,255,.5);font-size:1rem;max-width:480px;margin-inline:auto;line-height:1.7;font-weight:300">
+        Que vous soyez un habitué des circuits ou un novice curieux, l'Aquitaine Racing Team vous ouvre ses portes.
+      </p>
+      <div style="margin-top:36px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="rejoindre.html" class="btn btn-primary">Rejoindre le club</a>
+        <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <div class="footer__logo-text">ART</div>
+          <div class="footer__logo-sub">Aquitaine Racing Team</div>
+          <p class="footer__desc">Club de passionnés d'automobile basé en Aquitaine.</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <a href="index.html" class="footer__col-link">Accueil</a>
+          <a href="evenements.html" class="footer__col-link">Évènements</a>
+          <a href="galerie.html" class="footer__col-link">Galerie Photos</a>
+          <a href="a-propos.html" class="footer__col-link">À propos</a>
+          <a href="rejoindre.html" class="footer__col-link">Nous Rejoindre</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <a href="contact.html" class="footer__col-link">Formulaire contact</a>
+          <p class="footer__col-link" style="cursor:default">Laurent: +33 6 07 10 24 70</p>
+          <p class="footer__col-link" style="cursor:default">Hervé: +33 6 70 35 13 93</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Aquitaine Racing Team.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
